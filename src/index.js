@@ -4,6 +4,7 @@ $(document).ready(function(){
     play: 3000,
     pagination: false,
   });
+  $(".owl-prev").removeAttr("style");
 
   let typed = new Typed('.typed', {
     strings: ["Software Engineer", "Web Developer", "IT Consultant"],
@@ -20,6 +21,7 @@ $(document).ready(function(){
   const owlFour = $('#owl-data-base')
 
   owlOne.owlCarousel({
+    navigation : false,
     loop:true,
     nav:true,
     margin:10,
@@ -48,6 +50,7 @@ $(document).ready(function(){
   });
 
   owlTwo.owlCarousel({
+    navigation : false,
     loop:true,
     nav:true,
     margin:10,
@@ -76,6 +79,7 @@ $(document).ready(function(){
   });
 
   owlThree.owlCarousel({
+    navigation : false,
     loop:true,
     nav:true,
     margin:10,
@@ -104,6 +108,7 @@ $(document).ready(function(){
   });
 
   owlFour.owlCarousel({
+    nav : false,
     loop:true,
     nav:true,
     margin:10,
@@ -130,5 +135,20 @@ $(document).ready(function(){
     }
     e.preventDefault();
   });
+
+  const statsTopOffset = $(".statsSection").offset().top;
+  let countupFinished = false;
+  $(window).scroll(function(){
+    if(!countupFinished && window.pageYOffset > statsTopOffset - $(window).height() +200){
+      $(".counter").each(function(){
+        let element = $(this);
+        let endVal = parseInt(element.text());
+        element.countup(endVal);
+      })
+      countupFinished = true;
+    }
+  })
+
+
 
 });

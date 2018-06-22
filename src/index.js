@@ -1,3 +1,9 @@
+$(window).on("load", function(){
+  $(".loader .inner").fadeOut(750, function(){
+    $(".loader").fadeOut(1000);
+  });
+})
+
 $(document).ready(function(){
   $('#slides').superslides({
     animation: 'fade',
@@ -161,4 +167,25 @@ $(document).ready(function(){
 
   })
 
+  const NAV = $("#navigation");
+  const NAVTOP = NAV.offset().top;
+  $(window).on("scroll", function(){
+    let body = $("body");
+    if($(window).scrollTop() >= NAVTOP){
+      body.css("padding-top", NAV.outerHeight() + "px");
+      body.addClass("fixedNav");
+    } else {
+      body.css("padding-top", 0);
+      body.removeClass("fixedNav");
+    }
+  });
+
+  $("#navigation li a").click(function(event){
+    event.preventDefault();
+    let targetElement = $(this).attr("href");
+    let targetPosition = $(targetElement).offset().top;
+    $("html, body").animate({
+      scrollTop: targetPosition - 50
+    }, "slow")
+  })
 });

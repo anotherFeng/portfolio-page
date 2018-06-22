@@ -1,4 +1,16 @@
+@font-face{
+  font-family: 'Aqua';
+  src: url("aqua.ttf");
+  font-weight: bold;
+}
+
+@font-face{
+  font-family: 'sans-pro';
+  src: url("SourceSansPro-Regular.ttf");
+}
+
 .body{
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   color: #333;
   background-color: #fff;
@@ -23,7 +35,9 @@
 }
 
 .titleMessage{
+  font-family: 'Aqua', cursive;
   position: absolute;
+  font-weight: bold;
   width: 100%;
   height: 250px;
   top: 50%;
@@ -37,7 +51,7 @@
   text-shadow: 0px 2px 5px rgba(0,0,0,0.4);
   font-weight: 200;
   letter-spacing: 7px;
-  font-size: 300%;
+  font-size: 450%;
 }
 
 .titleMessage .heading span {
@@ -45,11 +59,44 @@
   text-shadow: 0px 2px 5px rgba(0,0,0,0.4);
   font-weight: 200;
   letter-spacing: 7px;
-  font-size: 150%;
+  font-size: 250%;
+}
+
+.social {
+  height: 30px;
+  margin-top: 30px;
+}
+
+.social a {
+  color: #fff;
+  font-size: 20px;
+  margin: 25px;
+  transition: all ease 0.3s;
+  text-decoration: none;
 }
 
 .section {
   padding: 100px 0 100px 0;
+}
+
+#about {
+  font-family: "sans-pro", cursive;
+}
+
+#contact {
+  font-family: "sans-pro", cursive;
+}
+
+#portfolio{
+  font-family: "sans-pro", cursive;  
+}
+
+#stats{
+  font-family: "sans-pro", cursive;  
+}
+
+#footer{
+  font-family: "sans-pro", cursive;  
 }
 
 .aboutImage {
@@ -58,6 +105,7 @@
 
 .skillsSection,
 .contactSection{
+  font-family: "sans-pro", cursive;
   color: #fff;
   background-color: #2c3e50;
 }
@@ -205,7 +253,7 @@
 .items a {
 	width: 40px;
     height: 40px;
-    background-color: #e74c3c;
+    background-color: #2c3e50;
     position: relative;
     display: inline-block;
 
@@ -267,11 +315,61 @@
 }
 
 .copyrightSection {
-  background-color: black;
+  background-color: #2c3e50;
   color: white;
   padding: 30px 5px;
 }
 
 .copyrightSection p {
   margin: 0;
+}
+
+#navigation{
+  font-family: "sans-pro", cursive;
+  background-color: #2c3e50;
+  padding: 20px 10px;
+  z-index: 100;
+  width: 100%;
+}
+
+#navigation li {
+  padding: 0 10px;
+  font-size: 20px;
+}
+
+#navigation li a{
+  color: white;
+}
+
+.nvabar-brand a{
+  color: white;
+}
+.navbar-brand:hover{
+  color: white;
+}
+
+.navbar-toggler-icon {
+  background: url(../img/menu.png);
+  background-size: 100%;
+}
+
+.fixedNav #navigation{
+  position: fixed;
+  top: 0px;
+}
+
+.loader{
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
+}
+
+.loader .inner{
+  width: 100%;
+  height: 100%;
+  background: url(../img/preloader.gif) center center no-repeat;
 }
